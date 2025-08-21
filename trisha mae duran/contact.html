@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      display: flex;
+      background: radial-gradient(circle at top left, #0f0f2d, #000);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: rgba(10, 10, 30, 0.9);
+      padding: 25px 20px;
+      box-shadow: 2px 0 20px rgba(0, 200, 255, 0.2);
+      backdrop-filter: blur(10px);
+      height: 100vh;
+    }
+    .sidebar .logo {
+      font-size: 26px;
+      color: #00ffee;
+      margin-bottom: 40px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ffee;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 25px;
+    }
+    .sidebar nav ul li a {
+      text-decoration: none;
+      color: #bbb;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    .sidebar nav ul li a i {
+      margin-right: 10px;
+      color: #00ffee;
+    }
+    .sidebar nav ul li a:hover,
+    .sidebar nav ul li a.active {
+      color: #00ffee;
+      transform: translateX(6px);
+    }
+
+    .contact-content {
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-section {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 238, 0.3);
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,255,238,0.2);
+    }
+    .contact-section h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #00ffee, #7a00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffee; }
+      to { text-shadow: 0 0 25px #7a00ff; }
+    }
+    .contact-section p {
+      font-size: 16px;
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      border: 1px solid rgba(0, 255, 238, 0.2);
+      transition: border 0.3s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1px solid #00ffee;
+    }
+    .btn {
+      background: linear-gradient(90deg, #00ffee, #7a00ff);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(122,0,255,0.6);
+    }
+
+    .contact-links {
+      margin-top: 15px;
+    }
+    .contact-links a {
+      margin: 0 10px;
+      color: #bbb;
+      font-size: 24px;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .contact-links a:hover {
+      color: #00ffee;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2 class="logo">Contact</h2>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="contact-content">
+    <section class="contact-section">
+      <h1>Contact Me</h1>
+      <p>Got a question or want to collaborate? Reach out to me below!</p>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <div class="contact-links">
+        <a href="https://m.me/your_trisha" target="_blank" title="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+        <a href="Durantrisha9@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/trishamdduran?igsh=MWVtcjVwaWZhZml4ag==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/trisha.duran.142" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

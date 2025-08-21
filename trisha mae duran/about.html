@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Trisha Mae</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: radial-gradient(circle at top left, #0f0f2d, #000);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+  
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 180deg,
+        #00c6ff,
+        #7a00ff,
+        #00ffee,
+        #0072ff,
+        #00c6ff
+      );
+      animation: rotateBg 15s linear infinite;
+      z-index: 0;
+      filter: blur(180px);
+      opacity: 0.4;
+    }
+    @keyframes rotateBg {
+      100% { transform: rotate(360deg); }
+    }
+
+
+    .sidebar {
+      width: 220px;
+      background: rgba(10, 10, 30, 0.9);
+      padding: 25px 20px;
+      box-shadow: 2px 0 20px rgba(0, 200, 255, 0.2);
+      backdrop-filter: blur(10px);
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+    .sidebar .logo {
+      font-size: 26px;
+      color: #00ffee;
+      margin-bottom: 40px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ffee;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 25px;
+    }
+    .sidebar nav ul li a {
+      text-decoration: none;
+      color: #bbb;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    .sidebar nav ul li a i {
+      margin-right: 10px;
+      color: #00ffee;
+    }
+    .sidebar nav ul li a:hover,
+    .sidebar nav ul li a.active {
+      color: #00ffee;
+      transform: translateX(6px);
+      text-shadow: 0 0 15px #00ffee;
+    }
+
+ 
+    .main-wrapper {
+      flex: 1;
+      z-index: 1;
+      padding: 60px 40px;
+    }
+
+    .about-section-glow {
+      padding: 30px;
+      border-radius: 20px;
+      border: 2px solid rgba(0,255,238,0.3);
+      box-shadow: 0 0 25px rgba(0,255,238,0.3), inset 0 0 15px rgba(122,0,255,0.2);
+      animation: glowBorder 3s infinite alternate;
+    }
+    @keyframes glowBorder {
+      from { box-shadow: 0 0 15px rgba(0,255,238,0.3); }
+      to   { box-shadow: 0 0 25px rgba(122,0,255,0.6); }
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+   
+    .text-section {
+      flex: 1;
+      max-width: 600px;
+    }
+    .text-section h3 {
+      font-size: 22px;
+      color: #00ffee;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      border-right: 2px solid #00ffee;
+      width: 15ch;
+      overflow: hidden;
+      animation: typing 3s steps(15), blink .8s step-end infinite alternate;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 15ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .text-section h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00ffee, #7a00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    .text-section h4 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #00c6ff;
+    }
+    .text-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+
+ 
+    .social-icons {
+      margin-top: 15px;
+    }
+    .social-icons a {
+      margin: 0 10px 0 0;
+      font-size: 20px;
+      color: #fff;
+      transition: transform 0.3s ease, color 0.3s, text-shadow 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #00ffee;
+      text-shadow: 0 0 15px #00ffee;
+    }
+
+    .btn-about {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #00ffee, #7a00ff);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 0 15px #00ffee;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
+    .btn-about:hover {
+      transform: scale(1.07) translateY(-2px);
+      box-shadow: 0 0 25px #7a00ff;
+    }
+
+
+    .image-section img {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00ffee;
+      box-shadow: 0 0 20px #00ffee, 0 0 40px #7a00ff;
+      animation: float 3s ease-in-out infinite, pulse 2s infinite alternate;
+      transition: transform 0.4s ease;
+    }
+    .image-section img:hover {
+      transform: scale(1.05) rotate(3deg);
+      box-shadow: 0 0 30px #00ffee, 0 0 60px #7a00ff;
+    }
+
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes pulse {
+      from { box-shadow: 0 0 15px #00ffee, 0 0 30px #7a00ff; }
+      to { box-shadow: 0 0 25px #00ffee, 0 0 50px #7a00ff; }
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffee; }
+      to { text-shadow: 0 0 25px #7a00ff; }
+    }
+
+
+    .timeline {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(0,255,238,0.3);
+      box-shadow: 0 0 15px rgba(0,255,238,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(122,0,255,0.6);
+    }
+
+
+    .skills-preview {
+      margin-top: 25px;
+    }
+    .bar {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      margin: 8px 0;
+      overflow: hidden;
+    }
+    .bar span {
+      display: block;
+      padding: 8px;
+      background: linear-gradient(90deg, #00ffee, #7a00ff);
+      border-radius: 20px;
+      font-size: 14px;
+      text-align: right;
+      color: #000;
+      font-weight: bold;
+    }
+
+  
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; text-align: center; }
+      .about-container { flex-direction: column; text-align: center; }
+      .image-section img { margin-top: 30px; }
+      .timeline { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar-wrapper">
+    <aside class="sidebar">
+      <h2 class="logo">Portfolio</h2>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+          <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+
+  <div class="main-wrapper">
+    <main class="about-content">
+      <section class="about-section-glow">
+        <div class="about-container">
+
+          <div class="text-section">
+            <h4>💻 And I am a Web Developer</h4>
+            <p>
+              I am a passionate Grade 12 student, currently 17 years old — born on <strong>March 13, 2008</strong>.
+              I enjoy turning creativity into meaningful projects through <strong>photography</strong>, 
+              <strong>music</strong>, and <strong>web development</strong>.
+            </p>
+            <p>
+              As a future front-end developer, I’m constantly learning and improving my skills in 
+              <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, while exploring more advanced topics 
+              like, <strong>C++</strong>, and responsive design.
+            </p>
+
+
+
+            <a href="skills.html" class="btn-about">More About Me</a>
+          </div>
+
+          <div class="image-section">
+            <img src="C:\Users\Acer\Documents\e65bc67b-8fa9-442b-89cb-70326056696e.jpg" alt="Trisha Mae" />
+          </div>
+        </div>
+
+
+        <div class="timeline">
+          <div class="card">
+            <h4>🎓 Student Life</h4>
+            <p>Currently a Grade 12 ICT student, passionate about coding and design.</p>
+          </div>
+          <div class="card">
+            <h4>🎶 Music & Art</h4>
+            <p>Ukulele player & photography enthusiast capturing creativity in daily life.</p>
+          </div>
+          <div class="card">
+            <h4>💻 Future Goals</h4>
+            <p>Aspiring front-end developer aiming to build modern, interactive web apps.</p>
+          </div>
+        </div>
+
+  
+
+</body>
+</html>

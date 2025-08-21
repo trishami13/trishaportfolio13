@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Trisha Mae</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      display: flex;
+      background: radial-gradient(circle at top left, #0f0f2d, #000);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+
+    .sidebar {
+      width: 220px;
+      background: rgba(10, 10, 30, 0.9);
+      padding: 25px 20px;
+      box-shadow: 2px 0 20px rgba(0, 200, 255, 0.2);
+      backdrop-filter: blur(10px);
+      height: 100vh;
+    }
+    .sidebar .logo {
+      font-size: 26px;
+      color: #00ffee;
+      margin-bottom: 40px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ffee;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav ul li {
+      margin-bottom: 25px;
+    }
+    .sidebar nav ul li a {
+      text-decoration: none;
+      color: #bbb;
+      font-size: 16px;
+      transition: color 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+    }
+    .sidebar nav ul li a i {
+      margin-right: 10px;
+      color: #00ffee;
+    }
+    .sidebar nav ul li a:hover,
+    .sidebar nav ul li a.active {
+      color: #00ffee;
+      transform: translateX(6px);
+    }
+
+    
+    .skills-content {
+      flex: 1;
+      padding: 50px;
+    }
+    .skills-section h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #00ffee, #7a00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffee; }
+      to { text-shadow: 0 0 25px #7a00ff; }
+    }
+    .skills-section p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+  
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+    .skill-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 238, 0.3);
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(122,0,255,0.6);
+    }
+    .skill-card i {
+      font-size: 40px;
+      color: #00ffee;
+      margin-bottom: 15px;
+    }
+    .skill-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .skill-card p {
+      font-size: 14px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2 class="logo">Skills</h2>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="skills.html" class="active"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="skills-content">
+    <section class="skills-section">
+      <h1>My Skills</h1>
+      <p>Here are some of the creative and technical skills I’m passionate about:</p>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <i class="fas fa-camera-retro"></i>
+          <h3>Photography</h3>
+          <p>Capturing special moments and turning them into memories with creativity and style.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-music"></i>
+          <h3>Ukulele</h3>
+          <p>Playing relaxing melodies and expressing emotion through music and strings.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Front-End Coding</h3>
+          <p>Proficient in HTML, CSS, and JavaScript — building interactive and beautiful websites.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-palette"></i>
+          <h3>Creative Design</h3>
+          <p>Designing modern layouts and visual experiences with a strong eye for color and balance.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-terminal"></i>
+          <h3>Programming</h3>
+          <p>Learning Python and C++ to explore logic building, automation, and future development potential.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Problem Solving</h3>
+          <p>Applying logical thinking to troubleshoot, debug, and build smarter solutions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
